@@ -1,0 +1,6 @@
+@import "tailwindcss";
+*{
+  font-family: Inter,Arial;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
