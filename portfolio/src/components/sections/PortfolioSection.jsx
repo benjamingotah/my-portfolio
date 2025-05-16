@@ -53,8 +53,8 @@ export const Portfolio = () => {
       description: 'Collaborated with team of frontend engineers do implement the figma design of a bank dashboard at InternPulse',
       image: portfolio,
       stack: ['React', 'Git','Github', 'Tailwindcss'],
-      github: 'https://github.com/InternPulse-Frontend-March-2025/bankdash',
-      live: 'https://bankdash-team-2025.netlify.app/'
+      github: 'https://github.com/benjamingotah/my-portfolio',
+      live: 'https://myportfolio-vert-six-84.vercel.app/portfolio'
     },
     {
       id: 1,
@@ -68,13 +68,13 @@ export const Portfolio = () => {
   ];
 
   const designProjects = [
-    { id: 1, image: bizee, title: 'Brand Identity' },
+    { id: 1, image: bizee, title: 'Flyer Design' },
     { id: 2, image: micado, title: 'Poster Design' },
     { id: 3, image: book, title: 'Book Cover' },
     { id: 4, image: ben, title: 'Logo Design' },
-    { id: 5, image: tombrown, title: 'Packaging' },
+    { id: 5, image: tombrown, title: 'Social Media' },
     { id: 5, image: iyf, title: 'Brochure' },
-    { id: 5, image: wed, title: 'Packaging' },
+    { id: 5, image: wed, title: 'Socia Media' },
     { id: 6, image: data, title: 'Social Media' }
   ];
 
@@ -279,7 +279,7 @@ export const Portfolio = () => {
               x: ['0%', '-100%'],
             }}
             transition={{
-              duration: 25,
+              duration: 10,
               repeat: Infinity,
               ease: 'linear',
             }}

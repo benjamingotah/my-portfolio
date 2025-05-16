@@ -58,7 +58,7 @@ const MobileDrawer = ({ isOpen, setIsOpen, navItems }) => {
                 ))}
               </div>
 
-              <div className={`pt-4 mt-auto border-t ${
+              <div className={`pt-4 mt-25 border-t ${
                 darkMode ? 'border-gray-700' : 'border-gray-200'
               }`}>
                 <ThemeToggle showLabel />

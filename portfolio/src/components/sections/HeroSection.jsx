@@ -2,8 +2,13 @@ import { motion } from 'framer-motion';
 import { Linkedin, Mail, Phone, Download } from 'lucide-react';
 import profile from "../../assets/profile.jpg";
 import { useEffect, useState } from 'react';
+import resumePdf from "../../assets/my-resume.pdf";
+import { useNavigate } from 'react-router-dom'; 
 
 const HeroSection = () => {
+  const navigate = useNavigate()
+  const handleContactClick = () => {
+    navigate('/contact'); }
   const [currentRole, setCurrentRole] = useState('Frontend Developer');
   const [animationKey, setAnimationKey] = useState(0);
 
@@ -97,6 +102,7 @@ const HeroSection = () => {
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           <motion.a
             href="#contact"
+            onClick={handleContactClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
@@ -108,8 +114,8 @@ const HeroSection = () => {
           </motion.a>
 
           <motion.a
-            href="/path-to-your-resume.pdf" // Update with your actual resume path
-            download
+            href={resumePdf} // Update with your actual resume path
+            download ="Benjamin-Gotah-Resume.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white px-6 py-3 rounded-md transition-colors"
