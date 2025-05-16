@@ -27,7 +27,7 @@ export const Portfolio = () => {
   const [activeTab, setActiveTab] = useState('software');
   const [selectedDesign, setSelectedDesign] = useState(null);
 
-  // Sample data - replace with your actual projects
+ 
   const softwareProjects = [
     {
       id: 1,
@@ -54,7 +54,7 @@ export const Portfolio = () => {
       image: portfolio,
       stack: ['React', 'Git','Github', 'Tailwindcss'],
       github: 'https://github.com/benjamingotah/my-portfolio',
-      live: 'https://myportfolio-vert-six-84.vercel.app/portfolio'
+      live: 'https://benjamingotah-portfolio.netlify.app/'
     },
     {
       id: 1,

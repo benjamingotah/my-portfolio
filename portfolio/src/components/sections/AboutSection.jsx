@@ -14,11 +14,12 @@ import tailwind from "../../assets/tailwind.png";
 import chakra from "../../assets/chakra.png";
 import ps from "../../assets/ps.png";
 import git from "../../assets/git.png";
-import pospadi from "../../assets/pos.png"; // Add this import
-import internpulse from "../../assets/internpulse.jpeg"; // Add this import
-import scholar from "../../assets/scholar.png"; // Add this import
+import pospadi from "../../assets/pos.png"; 
+import internpulse from "../../assets/internpulse.jpeg"; 
+import scholar from "../../assets/scholar.png"; 
 import free from "../../assets/free.png";
-import ben from "../../assets/ben.jpg"; // Add this import
+import ben from "../../assets/ben.jpg"; 
+import bank from "../../assets/bank.png"; 
 
 export const About = () => {
   const [activeTab, setActiveTab] = useState('about');
@@ -35,7 +36,7 @@ export const About = () => {
 
   const education = [
     {
-       year: "2022 - Present",
+       year: "April-December 2024",
     degree: "Full-Stack Software Engineering",
     institution: "IBT Learning",
     certificate: "https://learn.ibtlearning.africa/certificates/frek9juyki",
@@ -47,7 +48,7 @@ export const About = () => {
     ]
     },
     {
-      year: "2023 - present",
+      year: "2024 - present",
       degree: "BSc Computer Science",
       institution: "Kwame Nkrumah University of Science and Technology",
       description:  "Currently studying core computer science principles, including software development, data structures, and system architecture, to formalize and expand my technical expertise."
@@ -73,6 +74,12 @@ export const About = () => {
           description: "Agent-friendly fintech solution for Nigerian POS operators",
           link: "https://pospadi.com.ng",
           image: pospadi
+        },
+        {
+          name: "Bank-Dash",
+          description: "Implemented a bank dashboard figma design with team",
+          link: "https://bankdash-team-2025.netlify.app/",
+          image: bank
         },
         {
           name: "Freelancer Dashboard",
