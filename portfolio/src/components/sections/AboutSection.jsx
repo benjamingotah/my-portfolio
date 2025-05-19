@@ -270,10 +270,16 @@ export const About = () => {
                   About Me
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  I build scalable web applications with clean, maintainable code and strong foundations in data structures and algorithms. Through coursework and projects, I've honed my ability to transform designs into responsive UIs and integrate RESTful APIs. I thrive in collaborative environments where I can contribute both technical skills and problem-solving abilities. I'm passionate about continuous learning and staying current with emerging technologies. 
+                  I am a passionate graphic designer and frontend developer who thrives at the intersection of creativity and technology. With a strong foundation in visual design and expertise in web development, I craft aesthetic, intuitive, and responsive user interfaces that leave a lasting impression.
+
+                  My user-centered approach ensures that every design is not only visually captivating but also delivers an optimal user experience. I embrace new challenges, collaborating closely with clients to transform their ideas into high-quality digital experiences.
+
+                  Whether it’s through striking visuals or seamless web interactions, I am committed to turning visions into reality—one pixel at a time.
+
+ 
                 </p>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Today, I channel that same meticulous approach into building clean, efficient, and accessible web applications. I specialize in creating intuitive user interfaces with React and TypeScript, always with a focus on performance and maintainability.
+                
                 </p>
               </motion.div>
             )}
