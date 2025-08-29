@@ -3,12 +3,14 @@ import { Linkedin, Mail, Phone, Download } from 'lucide-react';
 import profile from "../../assets/profile.jpg";
 import { useEffect, useState } from 'react';
 import resumePdf from "../../assets/my-resume.pdf";
-import { useNavigate } from 'react-router-dom'; 
 
 const HeroSection = () => {
-  const navigate = useNavigate()
   const handleContactClick = () => {
-    navigate('/contact'); }
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const [currentRole, setCurrentRole] = useState('Frontend Developer');
   const [animationKey, setAnimationKey] = useState(0);
 
@@ -24,7 +26,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 px-4">
+    <section id="home" className="min-h-screen flex items-center justify-center py-20 relative">
+      <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-8 relative z-10">
       {/* Social Icons Column */}
       <div className="flex md:flex-col items-center gap-6 mt-8 md:mt-0">
         <motion.a
@@ -151,20 +154,21 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      <style jsx>{`
-        @keyframes morph {
-          0% {
-            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-          }
-          50% {
-            border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
-          }
-          100% {
-            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-          }
-        }
-      `}</style>
-    </section>
+             <style jsx>{`
+         @keyframes morph {
+           0% {
+             border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+           }
+           50% {
+             border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+           }
+           100% {
+             border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+           }
+         }
+       `}</style>
+       </div>
+     </section>
   );
 };
 

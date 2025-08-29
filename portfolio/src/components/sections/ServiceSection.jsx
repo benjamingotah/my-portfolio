@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
 import { Code2, Paintbrush, Layout, Smartphone, Server, Figma } from 'lucide-react';
-import { useNavigate } from 'react-router-dom'; 
+import { useTheme } from '../context/ThemeContext';
 
 export const Service = () => {
-  const navigate = useNavigate()
+  const { darkMode } = useTheme();
   const handleContactClick = () => {
-    navigate('/contact'); }
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const services = [
     {
       title: "Frontend Development",
@@ -20,19 +24,19 @@ export const Service = () => {
       ],
       color: "bg-blue-100 dark:bg-blue-900"
     },
-    // {
-    //   title: "UI/UX Design",
-    //   icon: <Layout className="w-8 h-8" />,
-    //   description: "Creating intuitive user experiences with pixel-perfect interfaces that drive engagement.",
-    //   features: [
-    //     "User research & testing",
-    //     "Wireframing & prototyping",
-    //     "Interaction design",
-    //     "Design systems",
-    //     "Accessibility compliance"
-    //   ],
-    //   color: "bg-purple-100 dark:bg-purple-900"
-    // },
+    {
+      title: "UI/UX Design",
+      icon: <Layout className="w-8 h-8" />,
+      description: "Creating intuitive user experiences with pixel-perfect interfaces that drive engagement.",
+      features: [
+        "User research & testing",
+        "Wireframing & prototyping",
+        "Interaction design",
+        "Design systems",
+        "Accessibility compliance"
+      ],
+      color: "bg-purple-100 dark:bg-purple-900"
+    },
     {
       title: "Graphic Design",
       icon: <Paintbrush className="w-8 h-8" />,
@@ -75,8 +79,12 @@ export const Service = () => {
   ];
 
   return (
-    <section className=" dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="services" className={`py-20 backdrop-blur-xl ${
+      darkMode 
+        ? 'bg-gradient-to-r from-gray-900/90 to-gray-800/90' 
+        : 'bg-gradient-to-r from-blue-50/90 to-purple-50/90'
+    }`}>
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,7 +102,7 @@ export const Service = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -102,7 +110,7 @@ export const Service = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-700"
+              className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300"
             >
               <div className={`p-6 ${service.color} text-center`}>
                 <div className="inline-flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-white dark:bg-gray-800 shadow-md">

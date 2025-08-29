@@ -9,17 +9,8 @@ import book from "../../assets/book.jpg";
 import ben from "../../assets/ben.jpg";
 import iyf from "../../assets/iyf.jpg";
 import wed from "../../assets/wed.jpg";
-import nodejs from "../../assets/nodejs.png";
-import js from "../../assets/js.png";
-import react from "../../assets/react.png";
-import html from "../../assets/html.png";
-import tailwind from "../../assets/tailwind.png";
-import chakra from "../../assets/chakra.png";
 import free from "../../assets/free.png";
-import ps from "../../assets/ps.png";
 import pos from "../../assets/pos.png";
-import git from "../../assets/git.png";
-import mongo from "../../assets/mongo.png";
 import portfolio from "../../assets/portfolio.png";
 import bank from "../../assets/bank.png";
 
@@ -78,21 +69,11 @@ export const Portfolio = () => {
     { id: 6, image: data, title: 'Social Media' }
   ];
 
-  const techLogos = [
-    { name: 'React', icon: react },
-    { name: 'JavaScript', icon: js },
-    { name: 'Html', icon: html },
-    { name: 'Tailwindcss', icon: tailwind},
-    { name: 'Photoshop', icon: ps},
-    { name: 'Git', icon: git},
-    { name: 'MongoDB', icon: mongo},
-    { name: 'Chakra', icon: chakra},
-    { name: 'Node.js', icon: nodejs }
-  ];
+
 
   return (
-    <section className=" min-h-screen">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="py-20 min-h-screen bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -125,7 +106,7 @@ export const Portfolio = () => {
         {/* Software Projects */}
         {activeTab === 'software' && (
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-4 gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -133,10 +114,10 @@ export const Portfolio = () => {
             {softwareProjects.map((project) => (
               <motion.div
                 key={project.id}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-700"
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300"
                 whileHover={{ y: -5 }}
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-50 overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -271,32 +252,7 @@ export const Portfolio = () => {
           </div>
         )}
 
-        {/* Rotating Tech Logos */}
-        <div className="mt-24 overflow-hidden">
-          <motion.div
-            className="flex gap-12"
-            animate={{
-              x: ['0%', '-100%'],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          >
-            {[...techLogos, ...techLogos].map((logo, index) => (
-              <div key={index} className="flex-shrink-0 w-24 h-24 flex items-center justify-center">
-                <motion.img
-                  src={logo.icon}
-                  alt={logo.name}
-                  className="w-16 h-16 object-contain"
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                />
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        
       </div>
     </section>
   );

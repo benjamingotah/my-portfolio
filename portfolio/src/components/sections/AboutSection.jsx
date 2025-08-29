@@ -174,8 +174,8 @@ export const About = () => {
   };
 
   return (
-    <section id="about" className="" ref={containerRef}>
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm" ref={containerRef}>
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
